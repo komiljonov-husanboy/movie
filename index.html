@@ -24,7 +24,7 @@
     </ul>
  
   </header> -->
-  <header class="heads">
+  <header class="heads ">
     <nav class=" navbar navbar-expand-lg navbar-light ">
     <div class="container">
       <a class="log__a logo__span" href="#"><img class="logo__img" src="./image/h.png" alt=""> <h1 class="logo__title">Husan.movies</h1></a>
@@ -45,61 +45,97 @@
               movies
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item text" href="#">serials</a></li>
-              <li><a class="dropdown-item text" href="#">comedies</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item text" href="#">  Movies</a></li>
+              <li class="lis"><select class="sel__category form-select select " aria-label="Default select example">
+                <option onchange="fnCategory(value)" class="text" selected>Categories</option>
+              
+              </select></li>
+              <li class="lis"><select onchange="fnRating(value)" class="form-select select" aria-label="Default select example">
+                <option  class="text" selected>Rating</option>
+                <option  class="text" value="max">max</option>
+                <option  class="text" value="min">min</option>
+              </select></li>
+              <li class="lis"><hr class="dropdown-divider"></li>
+              <li class="lis"><select onchange="fnYear(value)" class="form-select select" aria-label="Default select example">
+                <option  class="text" selected>movie years</option>
+                <option  class="text" value="new">new</option>
+                <option  class="text" value="old">old</option>
+              </select></a></li>
             </ul>
           </li>
+
           <li class="nav-item">
-            <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-          </li>
+              </li>
         </ul>
         <form class="d-flex  form">
           <input class="form-control me-2 inp" type="search" placeholder="Search" aria-label="Search">
           <button class="bottom">search</button>
         </form>
       </div>
-      <button class="btn__sing">sing up</button>
+      <button class="btn__sing">sign up</button>
     </div>
   </nav>
 
   </header>
-    <header class="container">
-      <h1 class="ads">watch <span class="sp">movie </span> ads on youtube</h1>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <header class=" carusel">
+        <h1 class="ads">watch <span class="sp ">movie </span> ads on youtube</h1>
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="./image/snowden.webp" class="imaged d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/game.jpg" class="imaged d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="./image/real.jpg" class="imaged d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./image/snowden.webp" class="imaged d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./image/game.jpg" class="imaged d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="./image/real.jpg" class="imaged d-block w-100" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </header>
+      </header>
     <section class="midle   container">
 
         <ul class="movies__list">
     
         </ul>
 </section>
+  <section>
+    <div>
+      <!-- <ul>
+        <li><input type="text" name="gmail" placeholder="email..."></li>
+      </ul>
+    </div> -->
+    <div class="container">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <label for="fname">First Name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="email">Email:</label><br> 
+        <input type="email" id="email" name="email"><br>
+        <button id="signup-btn">Sign Up</button>
+      </form>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>You have been registered successfully!</p>
+        </div>
+      </div>
+    </div>
+  </section>
   
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
