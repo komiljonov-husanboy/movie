@@ -1,6 +1,6 @@
 let elMov_list = document.querySelector('.movies__list');
 let partMovies = movies.slice(0,90)
-fnMapp(partMovies)
+fnMapp(partMovies.slice(0,8))
 function fnMapp(data) {
     elMov_list.innerHTML = ''
     data.forEach((item) => {
@@ -67,30 +67,28 @@ partMovies.forEach((item) =>{
         fnMapp(partMovies.filter((item) => item.Categories == category));
     } 
 
-// var Modal = document.querySelector('.modal')
 
-//     function fnModal(params) {
-        
-//     }
+let elSearchinp =document.querySelector('.inp');
 
 
-// function Modal(params) {
-//   const signupBtn = document.getElementById("signup-btn");
-//   const modal = document.getElementById("modal");
-//   const close = document.getElementsByClassName("close")[0];
-
-//   signupBtn.addEventListener("click", function() {
-//     modal.style.display = "block";
-//   });
-
-//   close.addEventListener("click", function() {
-//     modal.style.display = "none";
-//   });
-
-//   window.addEventListener("click", function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//     }
-// //   });
 
 
+
+function search(e) {
+    e.preventDefault()
+  
+
+
+    let strSearch = elSearchinp.value
+    let searchData = partMovies.filter((item) => item.Title.toString().toLowerCase().includes(strSearch.toLowerCase()))
+    let a = new RegExp(strSearch, 'gi')
+    searchData.forEach((item) => {
+        item.Title = item.Title.toString().toLowerCase().replace(strSearch, `<mark><b>${item.Title.toString().match(a).join('')   }</b></mark>`)
+    })
+fnMapp(searchData)
+}
+
+
+function fnPagenation(slide) {
+    fnMapp(partMovies.slice((slide - 1)*8,slide*8))
+}
